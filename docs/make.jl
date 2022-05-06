@@ -20,7 +20,7 @@ makedocs(
     modules = [AHMI],
     format = Documenter.HTML(
         prettyurls = !("local" in ARGS),
-        canonical = "https://BAT.github.io/AHMI.jl/stable/"
+        canonical = "https://bat.github.io/AHMI.jl/stable/"
     ),
     pages = [
         "Home" => "index.md",
@@ -34,7 +34,7 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/BAT/AHMI.jl.git",
+    repo = "github.com/bat/AHMI.jl.git",
     forcepush = true,
     push_preview = true,
 )
