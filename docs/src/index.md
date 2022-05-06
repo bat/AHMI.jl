@@ -2,7 +2,7 @@
 
 This package implements the [Adaptive Harmonic Mean Algorithm (AHMI)](http://doi.org/10.1142/S0217751X20501420).
 
-The AHMI.jl is built to support the [BAT.jl](https://github.com/bat/BAT.jl) integration interface, to use AHMI, run
+AHMI.jl is built to support the [BAT.jl](https://github.com/bat/BAT.jl) integration interface, to use AHMI, run
 
 ```julia
 using AHMI, BAT
