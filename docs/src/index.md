@@ -10,6 +10,21 @@ using AHMI, BAT
 bat_integrate(target, AHMIntegration())
 ```
 
+## Installation
+
+AHMI.jl it not a registered Julia package yet and currently requires BAT.jl v3.0.0-DEV.
+
+To install AHMI, use
+
+```julia
+julia> using Pkg
+julia> pkg"add BAT#main"
+julia> pkg"add https://github.com/bat/AHMI.jl.git"
+```
+
+
+## Citing AHMI
+
 If you use AHMI as an important part of your work, please cite 
 *Caldwell et al. "Integration with an Adaptive Harmonic Mean Algorithm", [IJMPA (2020)](http://doi.org/10.1142/S0217751X20501420).*
 

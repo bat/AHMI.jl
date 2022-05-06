@@ -8,6 +8,18 @@
 
 This package implements the [Adaptive Harmonic Mean Algorithm (AHMI)](http://doi.org/10.1142/S0217751X20501420).
 
+## Installation
+
+AHMI.jl it not a registered Julia package yet and currently requires BAT.jl v3.0.0-DEV.
+
+To install AHMI, use
+
+```julia
+julia> using Pkg
+julia> pkg"add BAT#main"
+julia> pkg"add https://github.com/bat/AHMI.jl.git"
+```
+
 ## Documentation
 
 * [Documentation for stable version](https://BAT.github.io/AHMI.jl/stable)
