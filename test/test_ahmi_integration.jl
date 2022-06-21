@@ -9,7 +9,7 @@ using LinearAlgebra: Diagonal, ones
 import BAT
 using BAT: bat_sample, bat_integrate, bat_eff_sample_size
 using BAT: IntegrationAlgorithm, IIDSampling
-using BAT: MCMCSampling, MetropolisHastings, NoDensityTransform, MCMCMultiCycleBurnin
+using BAT: MCMCSampling, MetropolisHastings, DoNotTransform, MCMCMultiCycleBurnin
 
 @testset "ahmi_integration" begin
     function test_integration(algorithm::IntegrationAlgorithm, title::String,
@@ -18,7 +18,7 @@ using BAT: MCMCSampling, MetropolisHastings, NoDensityTransform, MCMCMultiCycleB
         @testset "$title" begin
             samplingalg = MCMCSampling(
                 mcalg = MetropolisHastings(),
-                trafo = NoDensityTransform(),
+                trafo = DoNotTransform(),
                 nsteps = 2*10^5,
                 burnin = MCMCMultiCycleBurnin(nsteps_per_cycle = 10^5, max_ncycles = 60)
             )

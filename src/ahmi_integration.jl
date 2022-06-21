@@ -83,7 +83,7 @@ function BAT.bat_integrate_impl(target::AnySampleable, algorithm::AHMIntegration
     BAT.bat_integrate(samples, algorithm)
 end
 
-function BAT.bat_integrate_impl(target::SampledDensity, algorithm::AHMIntegration)
+function BAT.bat_integrate_impl(target::SampledMeasure, algorithm::AHMIntegration)
     BAT.bat_integrate_impl(target.samples, algorithm)
 end
 

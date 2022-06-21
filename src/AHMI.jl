@@ -30,7 +30,7 @@ using BAT: SpatialVolume, HyperRectVolume
 using BAT: MCMCIterator, DensitySampleVector, MCMCBasicStats
 using BAT: WhiteningAlgorithm, NoWhitening, CholeskyWhitening, CholeskyPartialWhitening, StatisticalWhitening
 using BAT: IntegrationAlgorithm, AutocorLenAlgorithm, GeyerAutocorLen
-using BAT: AnySampleable, SampledDensity
+using BAT: AnySampleable, SampledMeasure
 
 const _PLOTS_MODULE = Ref{Union{Module,Nothing}}(nothing)
 _plots_module() = _PLOTS_MODULE[]
