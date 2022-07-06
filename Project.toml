@@ -20,7 +20,7 @@ StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 ValueShapes = "136a8f8c-c49b-4edb-8b98-f3d64d48be8f"
 
 [compat]
-ArraysOfArrays = "0.4, 0.5"
+ArraysOfArrays = "0.4, 0.5, 0.6"
 BAT = "3"
 DocStringExtensions = "0.8, 0.9"
 Measurements = "2"
