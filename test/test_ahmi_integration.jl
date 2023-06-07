@@ -10,6 +10,7 @@ import BAT
 using BAT: bat_sample, bat_integrate, bat_eff_sample_size
 using BAT: IntegrationAlgorithm, IIDSampling
 using BAT: MCMCSampling, MetropolisHastings, DoNotTransform, MCMCMultiCycleBurnin
+using BATTestCases
 
 @testset "ahmi_integration" begin
     function test_integration(algorithm::IntegrationAlgorithm, title::String,
@@ -29,9 +30,9 @@ using BAT: MCMCSampling, MetropolisHastings, DoNotTransform, MCMCMultiCycleBurni
             @test sample_integral.err < err_max
         end
     end
-    test_integration(AHMIntegration(), "funnel distribution", BAT.FunnelDistribution(), val_rtol = 15)
-    test_integration(AHMIntegration(), "multimodal student-t distribution", BAT.MultimodalStudentT(), val_rtol = 50)
-    test_integration(AHMIntegration(), "Gaussian shell", BAT.GaussianShell(), val_rtol = 15)
+    test_integration(AHMIntegration(), "funnel distribution", FunnelDistribution(), val_rtol = 15)
+    test_integration(AHMIntegration(), "multimodal student-t distribution", MultimodalStudentT(), val_rtol = 50)
+    test_integration(AHMIntegration(), "Gaussian shell", GaussianShell(), val_rtol = 15)
     test_integration(AHMIntegration(), "MvNormal", MvNormal(Diagonal(ones(5))), val_rtol = 15)
 
     @testset "ahmi_integration_defaults" begin
