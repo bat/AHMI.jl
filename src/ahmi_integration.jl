@@ -43,7 +43,7 @@ end
 export AHMIntegration
 
 
-function BAT.bat_integrate_impl(target::DensitySampleVector, algorithm::AHMIntegration)
+function BAT.bat_integrate_impl(target::DensitySampleVector, algorithm::AHMIntegration, context::BATContext)
     hmi_data = HMIData(unshaped.(target))
 
     integrationvol = algorithm.volumetype
@@ -77,14 +77,14 @@ function BAT.bat_integrate_impl(target::DensitySampleVector, algorithm::AHMInteg
 end
 
 
-function BAT.bat_integrate_impl(target::AnySampleable, algorithm::AHMIntegration)
+function BAT.bat_integrate_impl(target::AnySampleable, algorithm::AHMIntegration, context::BATContext)
     npar = totalndof(varshape(target))
     samples = bat_sample(target).result::DensitySampleVector
     BAT.bat_integrate(samples, algorithm)
 end
 
-function BAT.bat_integrate_impl(target::SampledMeasure, algorithm::AHMIntegration)
-    BAT.bat_integrate_impl(target.samples, algorithm)
+function BAT.bat_integrate_impl(target::SampledMeasure, algorithm::AHMIntegration, context::BATContext)
+    BAT.bat_integrate_impl(target.samples, algorithm, context)
 end
 
 
